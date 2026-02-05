@@ -1,18 +1,11 @@
 
 
-function List() {
+function List(props) {
     
-    const fruits = [
-        // giving each element a unique id cause two element can have same .name or same prop values
-        {id:1,name:'Apple', calories:95}, 
-        {id:2,name:'Orange', calories:45},
-        {id:3,name:'Banana', calories:105},
-        {id:4,name:'coconut', calories:159},
-        {id:5,name:'pineapple', calories:37},
-    ];
-
+    const itemList = props.items;
+    const category = props.category;
     //sorting lexicographically i.e. alphabetically using .name prop
-    fruits.sort((a, b) => a.name.localeCompare(b.name));
+    //fruits.sort((a, b) => a.name.localeCompare(b.name));
     //for reverse order
     //fruits.sort((a, b) => b.name.localeCompare(a.name));
     //for numeric ascending sorting using calories
@@ -25,10 +18,14 @@ function List() {
     //to filter High calorie fruits   
     //const HiCalFruits = fruits.filter(fruit => fruit.calories > 100);
     
-    const ListItems = fruits.map(fruit => <li key={fruit.id}>
-                                            {fruit.name}:&nbsp;
-                                            <b>{fruit.calories}</b></li>);
-    return (<ol>{ListItems}</ol>);
+    const ListItems = itemList.map(item => <li key={item.id}>
+                                            {item.name}:&nbsp;
+                                            <b>{item.calories}</b></li>);
+    return (<>
+    <h3>{category}</h3> 
+    <ol>{ListItems}</ol>
+    </> 
+    );
 }
 
 export default List
