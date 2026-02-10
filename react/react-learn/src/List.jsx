@@ -27,12 +27,12 @@ function List(props) {
     </> 
     );
 }
-
-List.PropTypes={
+//for some reason if we dont define the propTypes for all of them then it will not show anything
+List.propTypes={
     category: PropTypes.string,
     items: PropTypes.arrayOf(PropTypes.shape({  id: PropTypes.number
                                                 ,name:PropTypes.string
-                                                ,calories:Proptypes.number
+                                                ,calories:PropTypes.number
     }))
 }
 
