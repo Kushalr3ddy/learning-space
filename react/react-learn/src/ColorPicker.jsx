@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function ColorPicker(){
 
-    function handleColorChange(){
+    function handleColorChange(event){
         setColor(event.target.value);
     }
 
