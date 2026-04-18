@@ -62,7 +62,6 @@
   border-radius: 5px;
   margin:0;
 }
-*/
 .list-category{
   font-size: 2.5em;
   font-weight: bold;
@@ -84,7 +83,6 @@
 .list-items li:hover{
   color: hsl(0, 0%, 45%);
   cursor: pointer;
-<<<<<<< HEAD
 }
 
 .counter-container{
@@ -115,7 +113,7 @@
 .counter-button:hover{
   background-color: hsl(197, 100%, 40%);
 }
-*/
+
 
 body{
   font-family: arial, sans-serif;
@@ -125,7 +123,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items:center;
-
+  
 }
 
 h1{
@@ -150,7 +148,7 @@ h1{
   color: hsl(0, 0%, 20%);
   font-size: 2rem;
   text-align: center;
-
+  
 }
 
 label{
@@ -165,6 +163,89 @@ input[type="color"]{
   padding: 5px;
   border-radius: 10px;
   border: 3px solid hsl(0, 0%, 80%);
-=======
->>>>>>> parent of 61a6c3e (done with useState hook)
+}
+*/
+
+
+body{
+  background-color: hsl(0, 0%, 10%);
+}
+.to-do-list{
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top:100px;
+}
+
+h1{
+  font-size: 4rem;
+}
+
+button{
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.5 ease;
+  border-radius: 5px;
+}
+
+.add-button{
+  background-color: hsl(125, 47%, 54%)
+}
+
+.add-button:hover{
+  background-color: hsl(125, 47%, 44%)
+}
+
+.delete-button{
+  background-color: hsl(10, 90%, 50%)
+}
+
+.delete-button:hover{
+  background-color: hsl(10, 90%, 40%)
+}
+
+move-button{
+  background-color: hsl(207, 90%, 64%)
+}
+
+.move-button:hover{
+  background-color: hsl(207, 90%, 54%)
+}
+
+input[type="text"]{
+  font-size: 1.6rem;
+  padding: 10px;
+  border: 2px solid hsla(0, 0%, 80%, 0.5);
+  border-radius: 5px;
+  color: hsla(0, 0%, 0%, 0.5);
+}
+
+ol{
+  padding: 0;
+}
+
+li{
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 3px solid hsla(0, 0%, 85%, 0.75);
+  border-radius: 5px;
+  display: flex;
+  align-items:center;
+}
+
+.text{
+  flex-grow:1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+
+.delete-button, .move-button{
+  padding: 8px 12px;
+  font-size: 1.4rem;
+  margin-left: 10px;
 }

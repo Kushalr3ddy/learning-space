@@ -1,12 +1,10 @@
-import { useState } from "react";
-import MyObjectArrayComponent from "./MyObjectArrayComponent.jsx";
-
+import ToDoList from "./ToDoList";
 
 function App() {
     
     
     return(
-        <MyObjectArrayComponent />
+        <ToDoList />
     );
 }
 
