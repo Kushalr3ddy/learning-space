@@ -1,11 +1,11 @@
-import ToDoList from "./ToDoList";
+import MyComponent from "./MyComponent.jsx";
 
 function App() {
     
     
     return(
-        <ToDoList />
+        <MyComponent />
     );
 }
 
-export default App
+export default App;

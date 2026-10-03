@@ -1,32 +1,60 @@
-import React,{ useState } from "react";
+import React, {useState, useEffect}from "react";
 
+/*
 function MyComponent(){
 
-    const[car, setCar] = useState({year:2024,
-                                    make: "Ford",
-                                    model:"Mustang"});
+    const [count, setCount] = useState(0);
+    const [color,setColor] = useState("green");
 
-    function handleYearChange(event){
-        //setCar({...car,year: event.target.value});
-        setCar(c => ({...c,year: event.target.value}));
-
-    }
-    function handleMakeChange(event){
-        setCar(c =>({...c,make: event.target.value}));
-    }
-    function handleModelChange(event){
-        setCar(c =>({...c,model:event.target.value}));
+    useEffect(() => {
+        document.title=`Count: ${count} ${color}`
+    },[count,color]);//add the component to the dependency array because the useEffect() hook will be trigerred if the component is rerendered for any reason
+    
+    function addCount(){
+        setCount(c => c+1 );
     }
     
-    return(
-        <div>
-            <p>Your Favourite car is: {car.year} {car.make} {car.model}</p>
-            <input type="number" value={car.year} onChange={handleYearChange}/><br />
-            <input type="text" value={car.make} onChange={handleMakeChange}/><br />
-            <input type="text" value={car.model} onChange={handleModelChange}/><br />
+    function subCount(){
+        setCount(c => c-1);
+    }
 
-        </div>
-    );
+    function changeColor(){
+        setColor(col => col=== "green" ? "red" : "green");
+    }
+
+    return(<>
+    <p style ={{color:color}}>Count: {count}</p>
+    <button onClick={addCount}>Add</button>
+    <button onClick={subCount}>Subtract</button><br />
+    <button onClick={changeColor}>Change Color</button>
+    </>);
 }
+*/
+function MyComponent(){
+    const [width, setWidth] = useState(window.innerWidth);
+    const [height, setHeight] = useState(window.innerHeight);
 
+    useEffect(() => {
+        window.addEventListener("resize",handleResize);
+        console.log("Event listener added");
+        return () => {
+            window.removeEventListener("resize",handleResize);
+            console.log("Event listener removed");
+        }
+    },[]);
+    
+    useEffect(() => {
+        document.title = `size :${width} ${height}`
+    });
+
+    function handleResize(){
+        setWidth(window.innerWidth);
+        setHeight(window.innerHeight);
+    }
+    return(<>
+            <p>Window Width: {width}px</p>
+            <p>Window Height:{height}px</p>
+    </>);
+    
+}
 export default MyComponent;

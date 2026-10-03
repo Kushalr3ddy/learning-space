@@ -14,7 +14,7 @@ function List(props) {
     //fruits.sort((a, b) => b.calories - a.calories);
 
     //to filter out only low calorie fruits
-    //const LoCalFruits = fruits.filter(fruit => fruit.calories < 100);
+    //const LoCalFruits = fruitds.filter(fruit => fruit.calories < 100);
     //to filter High calorie fruits   
     //const HiCalFruits = fruits.filter(fruit => fruit.calories > 100);
     
