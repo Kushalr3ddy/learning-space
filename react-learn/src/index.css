@@ -249,7 +249,7 @@ li{
   margin-left: 10px;
 }
 */
-/*digital clock after useEffect() hook below*/
+/*digital clock after useEffect() hook below
 body{
   background-image: url(https://cdn.pixabay.com/photo/2019/10/17/13/56/rubber-duck-4556969_1280.jpg);
   background-position: center;
@@ -257,8 +257,8 @@ body{
   background-size:cover;
   background-attachment: fixed;
   margin: 0;
-
-  /*optional*/
+  
+  
   display: flex;
   justify-content: center;
   min-height: 100vh;
@@ -278,5 +278,13 @@ body{
   font-family: monospace;
   text-align: center;
   text-shadow: 3px 3px 5px hsla(0,0%,0%,0.75);
+  
+}
 
+*/
+
+/*useContext() hook stuff below*/
+.box{
+  border: 3px solid;
+  padding: 25px;
 }
