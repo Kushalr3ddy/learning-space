@@ -1,6 +1,6 @@
-import React, {useState, useEffect}from "react";
+import React, {useState, useEffect, useRef}from "react";
 
-/*
+/* use effect hook stuff
 function MyComponent(){
 
     const [count, setCount] = useState(0);
@@ -30,6 +30,7 @@ function MyComponent(){
     </>);
 }
 */
+/* more use effect hook stuff
 function MyComponent(){
     const [width, setWidth] = useState(window.innerWidth);
     const [height, setHeight] = useState(window.innerHeight);
@@ -46,15 +47,68 @@ function MyComponent(){
     useEffect(() => {
         document.title = `size :${width} ${height}`
     });
-
+    
     function handleResize(){
         setWidth(window.innerWidth);
         setHeight(window.innerHeight);
     }
     return(<>
-            <p>Window Width: {width}px</p>
-            <p>Window Height:{height}px</p>
+    <p>Window Width: {width}px</p>
+    <p>Window Height:{height}px</p>
     </>);
     
+}
+*/
+
+function MyComponent(){
+
+    const inputRef1 = useRef(null);
+    const inputRef2 = useRef(null);
+    const inputRef3 = useRef(null);
+
+    
+    useEffect(() => {
+        console.log("COMPONENT RENDERED");
+    });
+
+    function handleClick1(){
+        inputRef1.current.focus();
+        inputRef1.current.style.backgroundColor="yellow";
+        inputRef2.current.style.backgroundColor="";
+        inputRef3.current.style.backgroundColor="";
+    }
+
+    function handleClick2(){
+        inputRef2.current.focus();
+        inputRef1.current.style.backgroundColor="";
+        inputRef2.current.style.backgroundColor="yellow";
+        inputRef3.current.style.backgroundColor="";
+    }
+
+    function handleClick3(){
+        inputRef3.current.focus();
+        inputRef1.current.style.backgroundColor="";
+        inputRef2.current.style.backgroundColor="";
+        inputRef3.current.style.backgroundColor="yellow";
+    }
+
+    return(
+        <div>
+
+        <button onClick={handleClick1}>
+            click me 1!
+        </button>
+        <input ref={inputRef1} />
+        <button onClick={handleClick2}>
+            click me 2!
+        </button>
+        <input ref={inputRef2} />
+        <button onClick={handleClick3}>
+            click me 3!
+        </button>
+        <input ref={inputRef3} />
+
+        </div>
+    );
 }
 export default MyComponent;
